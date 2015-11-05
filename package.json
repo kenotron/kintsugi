@@ -1,0 +1,24 @@
+{
+  "name": "kintsugi",
+  "version": "1.0.0",
+  "description": "A very opinionated and batteries-included application development toolkit comprising existing Javascript frameworks. Kintsugi combines the best of many tools to create a cohesive system to manage large and complex applications that are broken down into many packages.",
+  "main": "kintsugi.js",
+  "dependencies": {
+    "liftoff": "^2.2.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenotron/kintsugi.git"
+  },
+  "author": "Ken Chau <kchau@microsoft.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenotron/kintsugi/issues"
+  },
+  "homepage": "https://github.com/kenotron/kintsugi#readme"
+}
