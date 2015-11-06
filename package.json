@@ -15,8 +15,8 @@
     "type": "git",
     "url": "git+https://github.com/kenotron/kintsugi.git"
   },
-  "author": "Ken Chau <kchau@microsoft.com>",
-  "license": "ISC",
+  "author": "Ken Chau",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kenotron/kintsugi/issues"
   },
