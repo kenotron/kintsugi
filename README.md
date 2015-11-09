@@ -1,8 +1,8 @@
 # Kintsugi
-A very opinionated and batteries-included application development toolkit comprising existing Javascript frameworks. Kintsugi combines the best of many tools to create a cohesive system to manage large and complex applications that are broken down into many packages.
+A very opinionated and batteries-included application development toolkit comprising existing Javascript frameworks. Kintsugi combines the best of many tools to create a cohesive system to manage large and complex applications that are broken down into many packages. In other words, Kintsugi is to Gulp / Grunt as Google's Repo is to git.
 
 # Phases of a Project
-Kintsugi manages the development process into many phases. These are:
+Kintsugi manages the development process into build lifecycle phases. These are:
 
 ## Initialization
 * Scaffold project with sample packages

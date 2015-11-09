@@ -1,24 +1,32 @@
 {
-  "name": "kintsugi",
-  "version": "1.0.0",
-  "description": "A very opinionated and batteries-included application development toolkit comprising existing Javascript frameworks. Kintsugi combines the best of many tools to create a cohesive system to manage large and complex applications that are broken down into many packages.",
-  "main": "kintsugi.js",
-  "dependencies": {
-    "liftoff": "^2.2.0",
-    "minimist": "^1.2.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kenotron/kintsugi.git"
-  },
-  "author": "Ken Chau",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kenotron/kintsugi/issues"
-  },
-  "homepage": "https://github.com/kenotron/kintsugi#readme"
+    "name": "kintsugi",
+    "version": "1.0.0",
+    "description": "A very opinionated and batteries-included application   development toolkit comprising existing Javascript frameworks. Kintsugi combines the best of many tools to create a cohesive system to manage large and complex applications that are broken down into many packages.",
+    "main": "cli.js",
+    "dependencies": {
+        "glob": "^5.0.15",
+        "liftoff": "^2.2.0",
+        "minimist": "^1.2.0",
+        "object-assign": "^4.0.1",
+        "toposort": "^0.2.12",
+        "yo": "^1.5.0",
+        "generator-kintsugi": "^0.0.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kenotron/kintsugi.git"
+    },
+    "author": "Ken Chau",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/kenotron/kintsugi/issues"
+    },
+    "homepage": "https://github.com/kenotron/kintsugi#readme",
+    "bin": {
+        "k": "./bin/k"
+    }
 }

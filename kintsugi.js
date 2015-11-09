@@ -1,18 +1,51 @@
-var Liftoff = require('liftoff');
-var argv = require('minimist')(process.argv.slice(2));
+var path = require('path');
 
-var kintsugi = new Liftoff({
-	name: 'kintsugi'
-});
+var orderedSteps = ['init', 'build'];
 
-kintsugi.on('require', function(name, module) {
-	console.log('Loading external module:', name);
-});
+var steps = {
+	init: [],
+	build: [],
+	//dev: [],
+	//package: []
+};
 
-kintsugi.on('requireFail', function(name, err) {
-	console.log('Unable to load:', name, err);
-});
+function addDefaultStepFunctions() {
+	Object.keys(steps).forEach(function(step) {
+		var commandLibPath = path.resolve(__dirname, 'lib', step);
+		var commandLib = require(commandLibPath); 
+		if (commandLib) {
+			addStepFunction(step, commandLib);
+		}	
+	});
+}
 
-kintsugi.launch({}, function() {
-	console.log("HI");
-});
+function addStepFunction(step, fn) {
+	if (steps[step]) {
+		steps[step].push(fn);
+	}
+}
+
+module.exports.addStepFunction = addStepFunction;
+
+module.exports.executeStep = function(step, env) {
+	if (!steps[step]) {
+		return;
+	}
+	
+	var index = 0;
+	var currentStep;
+	
+	while (true) {
+		currentStep = orderedSteps[index++];
+		
+		steps[currentStep].forEach(function(f) {
+			f(env);
+		});
+		
+		if (currentStep == step) {
+			break;
+		}	
+	}
+}
+
+addDefaultStepFunctions();
