@@ -1,11 +1,9 @@
 var path = require('path');
 
-var orderedSteps = ['init', 'build'];
-
 var steps = {
 	init: [],
 	build: [],
-	//dev: [],
+	dev: [],
 	//package: []
 };
 
@@ -32,20 +30,9 @@ module.exports.executeStep = function(step, env) {
 		return;
 	}
 	
-	var index = 0;
-	var currentStep;
-	
-	while (true) {
-		currentStep = orderedSteps[index++];
-		
-		steps[currentStep].forEach(function(f) {
-			f(env);
-		});
-		
-		if (currentStep == step) {
-			break;
-		}	
-	}
+	steps[step].forEach(function(f) {
+		f(env);
+	});
 }
 
 addDefaultStepFunctions();

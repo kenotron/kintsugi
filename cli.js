@@ -17,7 +17,9 @@ cli.on('requireFail', function(name, err) {
 	console.log('Unable to load:', name, err);
 });
 
-cli.launch({}, function(env) {
+cli.launch({
+	cwd: argv["cwd"] || process.cwd()	
+}, function(env) {
 	if (commandList.length != 1) {
 		showUsage();
 		process.exit(0);	
