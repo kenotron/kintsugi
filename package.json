@@ -1,6 +1,6 @@
 {
     "name": "kintsugi",
-    "version": "1.0.0",
+    "version": "0.0.1",
     "description": "A very opinionated and batteries-included application   development toolkit comprising existing Javascript frameworks. Kintsugi combines the best of many tools to create a cohesive system to manage large and complex applications that are broken down into many packages.",
     "main": "cli.js",
     "dependencies": {
