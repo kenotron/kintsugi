@@ -1,10 +1,12 @@
 var path = require('path');
 
 var steps = {
-	init: [],
-	build: [],
-	dev: [],
-	//package: []
+	"init": [],
+	"prep": [],
+	"new": []
+	//"build":[],
+	//"dev": [],
+	//"package": []
 };
 
 function addDefaultStepFunctions() {
