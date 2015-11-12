@@ -3,20 +3,18 @@ var path = require('path');
 var steps = {
 	"init": [],
 	"prep": [],
-	"new": []
+	"new": [],
 	//"build":[],
-	//"dev": [],
+	"dev": []
 	//"package": []
 };
 
-function addDefaultStepFunctions() {
-	Object.keys(steps).forEach(function(step) {
-		var commandLibPath = path.resolve(__dirname, 'lib', step);
-		var commandLib = require(commandLibPath); 
-		if (commandLib) {
-			addStepFunction(step, commandLib);
-		}	
-	});
+function addDefaultStepFunctions(step) {
+	var commandLibPath = path.resolve(__dirname, 'lib', step);
+	var commandLib = require(commandLibPath); 
+	if (commandLib) {
+		addStepFunction(step, commandLib);
+	}
 }
 
 function addStepFunction(step, fn) {
@@ -32,9 +30,9 @@ module.exports.executeStep = function(step, env) {
 		return;
 	}
 	
+	addDefaultStepFunctions(step);
+	
 	steps[step].forEach(function(f) {
 		f(env);
 	});
 }
-
-addDefaultStepFunctions();

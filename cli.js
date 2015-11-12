@@ -1,15 +1,12 @@
 var path = require('path');
 var Liftoff = require('liftoff');
 var kintsugi = require('./kintsugi');
+var argv = require('minimist')(process.argv.slice(2));
 
-var argv = process.argv.slice(2);
-var args = require('minimist')(argv);
-
-var commandList = args["_"];
+var command = argv["_"].length > 0 ? argv["_"][0] : null;
 
 var cli = new Liftoff({
-	name: 'kintsugi',
-	extensions: { '.json': null }
+	name: 'kintsugi'
 });
 
 cli.on('require', function(name, module) {
@@ -21,21 +18,15 @@ cli.on('requireFail', function(name, err) {
 });
 
 cli.launch({
-	cwd: args["cwd"] || process.cwd()	
+	cwd: argv["cwd"] || process.cwd()	
 }, function(env) {
-	if (commandList.length == 0) {
+	if (!command) {
 		showUsage();
-		process.exit(0);
+		process.exit(0);	
 	}
 	
-	if (env.configPath) {
-		env.config = require(env.configPath);
-	}
-	
-	env.args = args;
+	argv["_"] = argv["_"].slice(1); // skip the command
 	env.argv = argv;
-	
-	var command = commandList[0];
 	
 	kintsugi.executeStep(command, env);
 });

@@ -10,6 +10,8 @@
         "object-assign": "^4.0.1",
         "toposort": "^0.2.12",
         "yo": "^1.5.0",
+        "webpack": "^1.12.4",
+        "webpack-dev-server": "^1.12.1",
         "generator-kintsugi": "^0.0.1",
         "semver": "^5.0.3"
     },
