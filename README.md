@@ -11,7 +11,7 @@ Kintsugi manages the development process into build lifecycle phases. These are:
 
 	k init
 	k init -g angular2
-	k init -g react-redux
+	k init -g react-reduxq
 	k init -g react-mobservable
 
 ## Development

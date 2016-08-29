@@ -1,35 +1,38 @@
 {
-    "name": "kintsugi",
-    "version": "0.0.1",
-    "description": "A very opinionated and batteries-included application   development toolkit comprising existing Javascript frameworks. Kintsugi combines the best of many tools to create a cohesive system to manage large and complex applications that are broken down into many packages.",
-    "main": "cli.js",
-    "dependencies": {
-        "glob": "^5.0.15",
-        "liftoff": "^2.2.0",
-        "minimist": "^1.2.0",
-        "object-assign": "^4.0.1",
-        "toposort": "^0.2.12",
-        "yo": "^1.5.0",
-        "webpack": "^1.12.4",
-        "webpack-dev-server": "^1.12.1",
-        "generator-kintsugi": "^0.0.1",
-        "semver": "^5.0.3"
-    },
-    "devDependencies": {},
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/kenotron/kintsugi.git"
-    },
-    "author": "Ken Chau",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/kenotron/kintsugi/issues"
-    },
-    "homepage": "https://github.com/kenotron/kintsugi#readme",
-    "bin": {
-        "k": "./bin/k"
-    }
+  "name": "kintsugi",
+  "version": "0.0.1",
+  "description": "A very opinionated and batteries-included large scale React application development environment. Kintsugi combines the best tools to create a cohesive system to manage large and complex applications that are broken down into many packages.",
+  "main": "cli.js",
+  "dependencies": {
+    "@types/express": "^4.0.32",
+    "@types/minimist": "^1.1.28",
+    "@types/serve-static": "^1.7.30",
+    "@types/webpack": "^1.12.33",
+    "express": "~4.14.0",
+    "generator-kintsugi": "^0.0.4",
+    "semver": "~5.3.0",
+    "webpack": "~1.13.2",
+    "webpack-dev-middleware": "~1.6.1",
+    "yo": "~1.8.4"
+  },
+  "devDependencies": {
+    "typescript": "^2.0.0"
+  },
+  "scripts": {
+    "start": "node_modules/.bin/tsc -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenotron/kintsugi.git"
+  },
+  "author": "Ken Chau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kenotron/kintsugi/issues"
+  },
+  "homepage": "https://github.com/kenotron/kintsugi#readme",
+  "bin": {
+    "k": "./bin/k"
+  }
 }
